@@ -1,0 +1,176 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 31/07/2015, 05:43:03 PM
+    Author     : easysoft
+*/
+
+body
+{
+    background-color: gray;
+}
+
+
+#head
+{
+    background-color: black;
+    margin: 0;
+    width: 100%;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    display: inline-block;
+}
+
+#foot
+{
+
+    background-color: black;
+    color: white;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    padding: 1em;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+}
+
+#info1{
+    position: fixed;
+    top: 8em;
+    right: 1em;
+    left: 1em;
+    bottom: 5em;
+    border-radius: 2em;
+    //background-image: url("../css/LogoEasySoft(SinFondo).png");
+    //background-repeat: no-repeat;
+    //background-size: auto;
+    background-color: #4bc6b2;
+    color: black;
+    width: available;
+
+    height: auto;
+    overflow-y: scroll;
+    display: inline-block;
+}
+#info2{
+    position: fixed;
+    top: 8em;
+    right: 1em;
+    left: 1em;
+    bottom: 5em;
+    border-radius: 2em;
+    //background-image: url("../css/LogoEasySoft(SinFondo).png");
+    //background-repeat: no-repeat;
+    //background-size: auto;
+    background-color: #943e9c;
+    color: white;
+    width: available;
+
+    height: auto;
+    overflow-y: scroll;
+    display: inline-block;
+}
+
+
+
+#menuIteminfo
+{
+    
+    color: black;
+    position: fixed;
+    text-align: center;
+    top: 5em;
+    left: 1em;
+    border-radius: 2em;
+    background: #4bc6b2;
+    width: 200px;
+    height: 2.7em;
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+#menuIteminfo2
+{
+    
+    color: #ffffff;
+    position: fixed;
+    text-align: center;
+    top: 5em;
+    left: 15em;
+    border-radius: 2em;
+    background: #943e9c;
+    width: 200px;
+    height: 2.7em;
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+
+#bigone
+{
+    text-align: center;
+    font-size: xx-large;
+    color: red;
+}
+
+
+
+.button {
+    border-top: 1px solid #000000;
+    background: #943e9c;
+    background: -webkit-gradient(linear, left top, left bottom, from(#943e9c), to(#943e9c));
+    background: -webkit-linear-gradient(top, #943e9c, #943e9c);
+    background: -moz-linear-gradient(top, #943e9c, #943e9c);
+    background: -ms-linear-gradient(top, #943e9c, #943e9c);
+    background: -o-linear-gradient(top, #943e9c, #943e9c);
+    padding: 11.5px 23px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: Georgia, serif;
+    text-decoration: none;
+    vertical-align: middle;
+    top: 50%;
+}
+.button:hover  {
+    border-top-color: #b76bbf;
+    background: #b76bbf;
+    color: #ffffff;
+}
+
+
+
+
+A:link {text-decoration:none;color:#ffffff;}
+
+
+A:visited {text-decoration:none;color:#ffffff;}
+
+
+A:active {text-decoration:none;color:#ff0000;}
+
+
+A:hover {text-decoration:underline;color:#cccccc;} 
+
+p {
+    margin-left: 1.7em;
+
+}
+
