@@ -21,6 +21,12 @@ and open the template in the editor.
             });
         </script>
         
+    <form action="./send_mail.php" method="POST">
+        
+        <input type="hidden" name="id" value="">
+        <input type="submit" value="Solicitar">
+        
+    </form>
     </head>
     <body>
         <div id="head">
@@ -49,6 +55,14 @@ and open the template in the editor.
                         echo '<td>';
                         echo 'Precio $'.$price[$x-1].' Descripciòn: '.$desc[$x-1];
                         echo '</td>';
+                        
+                        echo '<td>';
+                            echo '<form action="./send_mail.php" method="POST">';
+                               echo '<input type="email" name="mail" placeholder="someone@domain.com" required><br>';
+                               echo '<input type="hidden" name="id" value="'.$x.'">';
+                               echo '<input type="submit" value="Solicitar">';                           
+                            echo '</form>';
+                        echo '</td>';
                     echo '</tr>';
                     
                 }
@@ -64,7 +78,7 @@ and open the template in the editor.
         
         
         <div id="foot">
-            <a href="./about.html">Belldandy<br>
+            <a href="#">Belldandy<br>
                 "Slogan Magico"</a>
         </div>
     </body>

@@ -1,0 +1,37 @@
+<?php
+ $price = [100,200];
+ $desc = ['Manta Bien chida','Manta Kawaii'];
+
+
+if(!is_null($_POST['mail']))
+        {
+        $mail = $_POST['mail'];
+        $id = $_POST['id'];
+
+        $destinatario = "ceo@easysoftmx.xyz";
+        $asunto = "Solicitan informaciòn de articulo";
+        $cuerpo = ' 
+        <html> 
+        <head> 
+           <title>Informacion de articulo</title> 
+        </head> 
+        <body> 
+        <h1>Hola!</h1> 
+        <p> 
+            Han solicitado mas informacion sobre el producto con identificador '.$id.' correspondiente a la descripcion '.$desc[$id-1].', Porfavor envie informacion al siguiente EMail: '. $mail.'
+        </p> 
+        </body> 
+        </html> 
+        '; 
+
+        //para el envío en formato HTML 
+        $headers = "MIME-Version: 1.0\r\n"; 
+        $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+
+        //dirección de respuesta, si queremos que sea distinta que la del remitente 
+        $headers .= "Reply-To: ".$mail; 
+
+        mail($destinatario,$asunto,$cuerpo,$headers);
+
+  } 
+    
