@@ -9,7 +9,7 @@ if(!is_null($_POST['mail']))
         $id = $_POST['id'];
 
         $destinatario = "ceo@easysoftmx.xyz";
-        $asunto = "Solicitan informaciòn de articulo";
+        $asunto = "Solicitan informacion de articulo";
         $cuerpo = ' 
         <html> 
         <head> 
