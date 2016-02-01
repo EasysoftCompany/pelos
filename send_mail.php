@@ -18,7 +18,7 @@ if(!is_null($_POST['mail']))
         <body> 
         <h1>Hola!</h1> 
         <p> 
-            Han solicitado mas informacion sobre el producto con identificador '.$id.' correspondiente a la descripcion '.$desc[$id-1].', Porfavor envie informacion al siguiente EMail: '. $mail.'
+            Han solicitado mas informacion sobre el producto con identificador <b>'.$id.'</b> correspondiente a la descripcion '.$desc[$id-1].', Porfavor envie informacion al siguiente E-mail: <b>'. $mail.'</b>
         </p> 
         </body> 
         </html> 
@@ -32,6 +32,12 @@ if(!is_null($_POST['mail']))
         $headers .= "Reply-To: ".$mail; 
 
         mail($destinatario,$asunto,$cuerpo,$headers);
+        
+        echo '<script>'
+        . 'alert("Ha Solicitado informacion correctamente, porfavor espera la respuesta!");'
+        . 'window.location="./"'       
+        . '</script>';
+        
 
   } 
     
