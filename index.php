@@ -38,7 +38,7 @@ and open the template in the editor.
             <?php
                 for($x=1;$x<=2;$x++)
                 {
-                    echo '<a href="galeria/img'+$x+'jpg" rel="shadowbox[galeria1]" title="Imagen '+$x+'" ><img src="galeria/img'+$x+'.jpg" style="width:150px;height:100px;border:7px solid #1c1c1c;padding:0px;"/></a>';
+                    echo '<a href="galeria/img'.$x.'jpg" rel="shadowbox[galeria1]" title="Imagen '.$x.'" ><img src="galeria/img'.$x.'.jpg" style="width:150px;height:100px;border:7px solid #1c1c1c;padding:0px;"/></a>';
                 }
             
             ?>
