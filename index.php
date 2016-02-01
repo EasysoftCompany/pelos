@@ -58,7 +58,8 @@ and open the template in the editor.
                         
                         echo '<td>';
                             echo '<form action="./send_mail.php" method="POST">';
-                               echo '<label>Email:';
+                               echo '<label>Ingrese sus datos si desea mas informacion</label><br/><br/>';
+                               echo '<label>Email:</label>';
                                echo '<input type="email" name="mail" placeholder="someone@domain.com" required><br>';
                                echo '<input type="hidden" name="id" value="'.$x.'">';
                                echo '<input type="submit" value="Solicitar mas Informacion">';                           
