@@ -3,8 +3,7 @@
  $desc = ['Manta Bien chida','Manta Kawaii'];
 
 
-if(!is_null($_POST['mail']))
-        {
+if(!is_null($_POST['mail'])&&!is_null($_POST['id'])){
         $mail = $_POST['mail'];
         $id = $_POST['id'];
 
@@ -37,7 +36,11 @@ if(!is_null($_POST['mail']))
         . 'alert("Ha Solicitado informacion correctamente, porfavor espera la respuesta!");'
         . 'window.location="./"'       
         . '</script>';
-        
-
-  } 
+   }
+   else
+   {
+       echo '<script>'
+        . 'window.location="./"'       
+        . '</script>';
+   }
     
