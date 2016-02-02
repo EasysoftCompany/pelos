@@ -35,10 +35,6 @@ and open the template in the editor.
         <div id="menuIteminfo">Bienvenida</div>
         <div id="menuIteminfo2">Productos</div>
         
-        <div id="info1">
-            <p>Algunas palabras de interes...</p>
-        </div>
-        
         <div id="info2">
         
             <table>
@@ -70,12 +66,13 @@ and open the template in the editor.
                 }
             
             ?>
-           </table>
-            
-        
+           </table>          
         </div>
 
-        
+                
+        <div id="info1">
+            <p>Algunas palabras de interes...</p>
+        </div>
         
         
         
