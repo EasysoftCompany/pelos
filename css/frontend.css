@@ -29,7 +29,7 @@ body
 
 #foot
 {
-
+    transition: background-color 0.8s linear 0.2s;
     background-color: black;
     color: white;
     width: 100%;
@@ -41,6 +41,11 @@ body
     bottom: 0;
     left: 0;
 
+}
+
+#foot:hover
+{
+    background-color: #111;
 }
 
 #info1{
