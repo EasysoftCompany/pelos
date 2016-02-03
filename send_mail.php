@@ -1,7 +1,5 @@
 <?php
- $price = [100,200];
- $desc = ['Manta Bien chida','Manta Kawaii'];
-
+ include 'arrays.php';
 
 if(!is_null($_POST['mail'])&&!is_null($_POST['id'])){
         $mail = $_POST['mail'];

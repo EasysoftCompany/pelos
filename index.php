@@ -39,9 +39,11 @@ and open the template in the editor.
         
             <table>
             <?php
-            $price = [100,200];
-            $desc = ['Manta Bien chida','Manta Kawaii'];
-                for($x=1;$x<=2;$x++)
+            include 'arrays.php';
+            
+            $cant = count($price);
+            
+                for($x=1;$x<=$cant;$x++)
                 {
                     echo '<tr>';
                         echo '<td>';
