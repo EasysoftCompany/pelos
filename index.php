@@ -8,6 +8,7 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>.::Belldandy::.</title>
+        
         <link href="css/frontend.css" rel="stylesheet" type="text/css"/>
         <link rel="icon" type="image/png" href="css/favicon.ico" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
