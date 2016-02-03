@@ -84,6 +84,20 @@ body
     overflow-y: scroll;
     display: inline-block;
 }
+#Err500{
+    position: fixed;
+    top: 8em;
+    right: 1em;
+    left: 1em;
+    bottom: 5em;
+    border-radius: 2em;
+    background-color: crimson;
+    color: white;
+    width: available;
+    height: auto;
+    font-size: 18px;
+    display: inline-block;
+}
 
 
 

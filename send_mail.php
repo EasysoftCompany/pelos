@@ -40,7 +40,7 @@ if(!is_null($_POST['mail'])&&!is_null($_POST['id'])){
    else
    {
        echo '<script>'
-        . 'window.location="./"'       
+        . 'window.location="./500.html"'       
         . '</script>';
    }
     
