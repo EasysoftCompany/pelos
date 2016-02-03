@@ -4,72 +4,63 @@
 
 if(!is_null($_POST['mail'])&&!is_null($_POST['id'])){
     
+     $mail = $_POST['mail'];
+     $id = $_POST['id'];
+    
         Conekta::setApiKey("key_9zfeT8G8yYVrCRizd6ywRg");
     
         $charge = Conekta_Charge::create(array(
-                'description'=> 'Stogies',
-                'reference_id'=> '9839-wolf_pack',
-                'amount'=> 20000,
+                'description'=> $desc[$id-1],
+                'reference_id'=> $id,
+                'amount'=> $price[$id-1].'00',
                 'currency'=>'MXN',
                 'cash'=> array(
                   'type'=> 'oxxo',
                   'expires_at'=> '2016-02-12'
                 ),
                 'details'=> array(
-                  'name'=> 'Arnulfo Quimare',
-                  'phone'=> '403-342-0642',
-                  'email'=> 'logan@x-men.org',
+                  'name'=> null,
+                  'phone'=> null,
+                  'email'=> $mail,
                   'customer'=> array(
-                    'corporation_name'=> 'Conekta Inc.',
-                    'logged_in'=> true,
-                    'successful_purchases'=> 14,
-                    'created_at'=> 1379784950,
-                    'updated_at'=> 1379784950,
-                    'offline_payments'=> 4,
-                    'score'=> 9
+                    'corporation_name'=> null,
+                    'logged_in'=> false,
+                    'successful_purchases'=> null,
+                    'created_at'=> null,
+                    'updated_at'=> null,
+                    'offline_payments'=> 0,
+                    'score'=> 0
                   ),
                   'line_items'=> array(
                     array(
-                      'name'=> 'Box of Cohiba S1s',
-                      'description'=> 'Imported From Mex.',
-                      'unit_price'=> 20000,
+                      'name'=> 'Manta',
+                      'description'=> $desc[$id-1],
+                      'unit_price'=> $price[$id-1].'00',
                       'quantity'=> 1,
-                      'sku'=> 'cohb_s1',
-                      'type'=> 'food'
+                      'sku'=> 'mnt_'.$id,
+                      'type'=> 'Anime'
                     )
                   ),
-                  'billing_address'=> array(
-                    'street1'=>'77 Mystery Lane',
-                    'street2'=> 'Suite 124',
-                    'street3'=> null,
-                    'city'=> 'Darlington',
-                    'state'=>'NJ',
-                    'zip'=> '10192',
-                    'country'=> 'Mexico',
-                    'phone'=> '77-777-7777',
-                    'email'=> 'purshasing@x-men.org'
-                  ),
-                  'shipment'=> array(
-                    'carrier'=> 'estafeta',
-                    'service'=> 'international',
-                    'price'=> 20000,
-                    'address'=> array(
-                      'street1'=> '250 Alexis St',
-                      'street2'=> null,
-                      'street3'=> null,
-                      'city'=> 'Red Deer',
-                      'state'=> 'Alberta',
-                      'zip'=> 'T4N 0B8',
-                      'country'=> 'Canada'
-                    )
-                  )
+
                 )
               ));
         
-        $mail = $_POST['mail'];
-        $id = $_POST['id'];
-        echo $charge->payment_method->barcode_url;
-
+        echo '<html>';
+        
+         echo '<head>';    
+            echo '<link href="css/payment.css" rel="stylesheet" type="text/css"/>';
+         echo '</head>';
+         
+         echo '<body>';
+            echo '<div id="pay">';
+                echo '<h2>Ficha de Pago en OXXO</h2><br><br>';
+                
+                echo '<img src="'.$charge->payment_method->barcode_url.'"/>';
+                echo '<br><label>'.$charge->payment_method->barcode.'</label>';
+            echo '</div>';
+        echo '</body>';
+        
+         echo '</html>';
         
         /*
         $destinatario = "camg.camg62@gmail.com";

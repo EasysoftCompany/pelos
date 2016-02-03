@@ -1,0 +1,21 @@
+
+#pay {
+    
+    position: fixed;
+    top: 4em;
+    right: 1em;
+    left: 1em;
+    bottom: 4em;
+    border-radius: 1em;
+    background-color: #ddd;
+    color: black;
+    width: available;
+    height: auto;
+    display: inline-block;
+}
+
+body
+{
+    background-color: #fff;
+}
+
