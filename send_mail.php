@@ -6,7 +6,9 @@ if(!is_null($_POST['mail'])&&!is_null($_POST['id'])){
     
      $mail = $_POST['mail'];
      $id = $_POST['id'];
-    
+        $dia_manana = date('d',time()+172800); 
+        $mes_manana = date('m',time()+172800); 
+        $ano_manana = date('Y',time()+172800);
         Conekta::setApiKey("key_9zfeT8G8yYVrCRizd6ywRg");
     
         $charge = Conekta_Charge::create(array(
@@ -16,7 +18,7 @@ if(!is_null($_POST['mail'])&&!is_null($_POST['id'])){
                 'currency'=>'MXN',
                 'cash'=> array(
                   'type'=> 'oxxo',
-                  'expires_at'=> '2016-02-12'
+                  'expires_at'=> $ano_manana.'-'.$mes_manana.'-'.$dia_manana
                 ),
                 'details'=> array(
                   'name'=> null,
@@ -48,15 +50,25 @@ if(!is_null($_POST['mail'])&&!is_null($_POST['id'])){
         echo '<html>';
         
          echo '<head>';    
-            echo '<link href="css/payment.css" rel="stylesheet" type="text/css"/>';
+            echo '<link href="css/payment.css" rel="stylesheet" type="text/css"/ >';
+            echo '<link href="css/payment.css" rel="stylesheet" type="text/css"/ media="print">';
          echo '</head>';
          
          echo '<body>';
             echo '<div id="pay">';
-                echo '<h2>Ficha de Pago en OXXO</h2><br><br>';
-                
-                echo '<img src="'.$charge->payment_method->barcode_url.'"/>';
-                echo '<br><label>'.$charge->payment_method->barcode.'</label>';
+            echo '<br><br>';
+                echo'<div id="OXXO">';
+                         echo '<center><h2>Ficha de Pago en OXXO</h2></center>'; 
+                echo'</div>';
+                echo '<br><br><br>';
+                $costo = $charge->amount/100;
+                echo '<br><label id="p"> Costo: $'.$costo.'</label><br>';
+                echo '<br><label id="p"> Descripcion: '.$charge->description.'</label><br>'; 
+                echo '<br><label id="p"> SKU: '.$charge->reference_id.'</label><br>';
+                echo '<br><label id="p"> Fecha de Expiracion: '.date("j-M-Y g:i a",$charge->payment_method->expires_at).'</label><br><br><br>';
+                echo '<img src="'.$charge->payment_method->barcode_url.'" id="img" />';
+                echo '<br><label id="barcode">'.$charge->payment_method->barcode.'</label>';
+                echo '<br><label id="nota">Recuerde que OXXO S.A. de C.V. cobra una comision adicional al costo aqui mostrado de $9.00 MXN</label>';
             echo '</div>';
         echo '</body>';
         

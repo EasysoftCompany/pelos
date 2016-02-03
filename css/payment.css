@@ -1,19 +1,48 @@
 
 #pay {
     
+    alignment-adjust: middle;
     position: fixed;
-    top: 4em;
+    top: 2em;
     right: 1em;
     left: 1em;
-    bottom: 4em;
-    border-radius: 1em;
+    bottom: 2em;
+    border-radius: 2em;
     background-color: #ddd;
     color: black;
-    width: available;
+    width: auto;
     height: auto;
     display: inline-block;
 }
 
+#OXXO
+{
+    background-image: url("../galeria/OX.png");
+    width: 100%;
+    display: inline-block;
+    color: #fff;
+}
+
+#p{
+    margin-left: 3em;
+    font-weight: bold
+}
+
+#nota{
+    margin-left: 15em;
+    color: red;
+    font-size: 1em;
+}
+
+#img{
+    margin-left: 25em;
+    width: 300px;
+    }
+
+#barcode{
+    margin-left: 26em;
+    font-weight: bold
+}
 body
 {
     background-color: #fff;
