@@ -52,8 +52,8 @@ if(!is_null($_POST['mail'])&&!is_null($_POST['id'])){
         
         $message .= '<html>';      
          $message .= '<head>';    
-            $message .= '<link href="css/payment.css" rel="stylesheet" type="text/css"/ >';
-            $message .= '<link href="css/payment.css" rel="stylesheet" type="text/css"/ media="print">';
+            $message .= '<link href="http://belldandy.esy.es/css/payment.css" rel="stylesheet" type="text/css"/ >';
+            $message .= '<link href="http://belldandy.esy.es/css/payment.css" rel="stylesheet" type="text/css"/ media="print">';
          $message .= '</head>';
          
          $message .= '<body>';
@@ -78,8 +78,8 @@ if(!is_null($_POST['mail'])&&!is_null($_POST['id'])){
          
          echo $message;
         
-        $destinatario = "g_rico_c@hotmail.com";
-        $asunto = "Solicitan informacion de articulo";
+        $destinatario = $mail;
+        $asunto = "Compra del producto: <<". $desc[$id-1].'>>' ;
         
         //para el envío en formato HTML 
         $headers = "MIME-Version: 1.0\r\n"; 

@@ -22,21 +22,21 @@ and open the template in the editor.
             });
         </script>
         
-    <form action="./send_mail.php" method="POST">
-        
-        <input type="hidden" name="id" value="">
-        <input type="submit" value="Solicitar">
-        
-    </form>
     </head>
     <body>
         <div id="head">
             <h2>.::Belldandy::.</h2>   
         </div>
         <div id="menuIteminfo">Bienvenida</div>
-        <div id="menuIteminfo2">Productos</div>
+        <div id="menuIteminfo2">Tutorial</div>
+        <div id="menuIteminfo3">Productos</div>
+        
         
         <div id="info2">
+            
+        </div>
+        
+        <div id="info3">
         
             <table>
             <?php
@@ -57,11 +57,11 @@ and open the template in the editor.
                         
                         echo '<td>';
                             echo '<form action="./send_mail.php" method="POST">';
-                               echo '<label>Ingrese sus datos si desea mas informacion</label><br/><br/>';
+                               echo '<label>Para comprar el producto ingrese su correo electronico</label><br/><br/>';
                                echo '<label>Email:</label>';
                                echo '<input type="email" name="mail" placeholder="someone@domain.com" required><br>';
                                echo '<input type="hidden" name="id" value="'.$x.'">';
-                               echo '<input type="submit" value="Solicitar mas Informacion">';                           
+                               echo '<input class="button" type="submit" value="comprar">';                           
                             echo '</form>';
                         echo '</td>';
                     echo '</tr>';

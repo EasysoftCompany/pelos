@@ -84,6 +84,25 @@ body
     overflow-y: scroll;
     display: inline-block;
 }
+
+#info3{
+    position: fixed;
+    top: 8em;
+    right: 1em;
+    left: 1em;
+    bottom: 5em;
+    border-radius: 2em;
+    //background-image: url("../css/LogoEasySoft(SinFondo).png");
+    //background-repeat: no-repeat;
+    //background-size: auto;
+    background-color: #FFF;
+    color: BLACK;
+    width: available;
+
+    height: auto;
+    overflow-y: scroll;
+    display: inline-block;
+}
 #Err500{
     position: fixed;
     top: 8em;
@@ -135,6 +154,20 @@ body
 
 }
 
+#menuIteminfo3
+{
+    color: #ffffff;
+    position: fixed;
+    text-align: center;
+    top: 5em;
+    left: 29em;
+    border-radius: 2em;
+    background: #943e9c;
+    width: 200px;
+    height: 2.7em;
+    display: inline-block;
+    vertical-align: middle;
+}
 
 #bigone
 {
