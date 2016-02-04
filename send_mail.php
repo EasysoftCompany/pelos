@@ -4,8 +4,11 @@
 
 if(!is_null($_POST['mail'])&&!is_null($_POST['id'])){
     
+    $message;
+    
      $mail = $_POST['mail'];
      $id = $_POST['id'];
+     
         $dia_manana = date('d',time()+172800); 
         $mes_manana = date('m',time()+172800); 
         $ano_manana = date('Y',time()+172800);
@@ -47,50 +50,37 @@ if(!is_null($_POST['mail'])&&!is_null($_POST['id'])){
                 )
               ));
         
-        echo '<html>';
-        
-         echo '<head>';    
-            echo '<link href="css/payment.css" rel="stylesheet" type="text/css"/ >';
-            echo '<link href="css/payment.css" rel="stylesheet" type="text/css"/ media="print">';
-         echo '</head>';
+        $message .= '<html>';      
+         $message .= '<head>';    
+            $message .= '<link href="css/payment.css" rel="stylesheet" type="text/css"/ >';
+            $message .= '<link href="css/payment.css" rel="stylesheet" type="text/css"/ media="print">';
+         $message .= '</head>';
          
-         echo '<body>';
-            echo '<div id="pay">';
-            echo '<br><br>';
-                echo'<div id="OXXO">';
-                         echo '<center><h2>Ficha de Pago en OXXO</h2></center>'; 
-                echo'</div>';
-                echo '<br><br><br>';
+         $message .= '<body>';
+            $message .= '<div id="pay">';
+            $message .= '<br><br>';
+                $message .='<div id="OXXO">';
+                         $message .= '<center><h2>Ficha de Pago en OXXO</h2></center>'; 
+                $message .='</div>';
+                $message .= '<br><br><br>';
                 $costo = $charge->amount/100;
-                echo '<br><label id="p"> Costo: $'.$costo.'</label><br>';
-                echo '<br><label id="p"> Descripcion: '.$charge->description.'</label><br>'; 
-                echo '<br><label id="p"> SKU: '.$charge->reference_id.'</label><br>';
-                echo '<br><label id="p"> Fecha de Expiracion: '.date("j-M-Y g:i a",$charge->payment_method->expires_at).'</label><br><br><br>';
-                echo '<img src="'.$charge->payment_method->barcode_url.'" id="img" />';
-                echo '<br><label id="barcode">'.$charge->payment_method->barcode.'</label>';
-                echo '<br><label id="nota">Recuerde que OXXO S.A. de C.V. cobra una comision adicional al costo aqui mostrado de $9.00 MXN</label>';
-            echo '</div>';
-        echo '</body>';
+                $message .= '<br><label id="p"> Costo: $'.$costo.'</label><br>';
+                $message .= '<br><label id="p"> Descripcion: '.$charge->description.'</label><br>'; 
+                $message .= '<br><label id="p"> SKU: '.$charge->reference_id.'</label><br>';
+                $message .= '<br><label id="p"> Fecha de Expiracion: '.date("j-M-Y g:i a",$charge->payment_method->expires_at).'</label><br><br><br>';
+                $message .= '<img src="'.$charge->payment_method->barcode_url.'" id="img" />';
+                $message .= '<br><label id="barcode">'.$charge->payment_method->barcode.'</label>';
+                $message .= '<br><label id="nota">Recuerde que OXXO S.A. de C.V. cobra una comision adicional al costo aqui mostrado de $9.00 MXN</label>';
+            $message .= '</div>';
+        $message .= '</body>';
         
-         echo '</html>';
+         $message .= '</html>';
+         
+         echo $message;
         
-        /*
-        $destinatario = "camg.camg62@gmail.com";
+        $destinatario = "g_rico_c@hotmail.com";
         $asunto = "Solicitan informacion de articulo";
-        $cuerpo = ' 
-        <html> 
-        <head> 
-           <title>Informacion de articulo</title> 
-        </head> 
-        <body> 
-        <h1>Hola!</h1> 
-        <p> 
-            Han solicitado mas informacion sobre el producto con identificador <b>'.$id.'</b> correspondiente a la descripcion '.$desc[$id-1].', Porfavor envie informacion al siguiente E-mail: <b>'. $mail.'</b>
-        </p> 
-        </body> 
-        </html> 
-        '; 
-
+        
         //para el envío en formato HTML 
         $headers = "MIME-Version: 1.0\r\n"; 
         $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
@@ -98,14 +88,9 @@ if(!is_null($_POST['mail'])&&!is_null($_POST['id'])){
         //dirección de respuesta, si queremos que sea distinta que la del remitente 
         $headers .= "Reply-To: ".$mail; 
 
-        mail($destinatario,$asunto,$cuerpo,$headers);
+        mail($destinatario,$asunto,$message,$headers);
         
-        echo '<script>'
-        . 'alert("Ha Solicitado informacion correctamente, porfavor espera la respuesta!");'
-        . 'window.location="./"'       
-        . '</script>';
-         * 
-         */
+     
         
         
    }
