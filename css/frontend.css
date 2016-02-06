@@ -10,13 +10,13 @@ and open the template in the editor.
 
 body
 {
-    background-color: gray;
+    background-color: white;
 }
 
 
 #head
 {
-    background-color: black;
+    background-color: #303f9f;
     margin: 0;
     width: 100%;
     color: white;
@@ -29,8 +29,7 @@ body
 
 #foot
 {
-    transition: background-color 0.8s linear 0.2s;
-    background-color: black;
+    background-color: #303f9f;
     color: white;
     width: 100%;
     text-align: center;
@@ -43,10 +42,6 @@ body
 
 }
 
-#foot:hover
-{
-    background-color: #111;
-}
 
 #info1{
     position: fixed;
@@ -58,7 +53,7 @@ body
     //background-image: url("../css/LogoEasySoft(SinFondo).png");
     //background-repeat: no-repeat;
     //background-size: auto;
-    background-color: #4bc6b2;
+    background-color: #03a9f4;
     color: black;
     width: available;
 
@@ -76,7 +71,7 @@ body
     //background-image: url("../css/LogoEasySoft(SinFondo).png");
     //background-repeat: no-repeat;
     //background-size: auto;
-    background-color: #943e9c;
+    background-color: #03a9f4;
     color: white;
     width: available;
 
@@ -95,7 +90,7 @@ body
     //background-image: url("../css/LogoEasySoft(SinFondo).png");
     //background-repeat: no-repeat;
     //background-size: auto;
-    background-color: #FFF;
+    background-color: #03a9f4;
     color: BLACK;
     width: available;
 
@@ -123,13 +118,13 @@ body
 #menuIteminfo
 {
     
-    color: black;
+    color: #ffffff;
     position: fixed;
     text-align: center;
     top: 5em;
     left: 1em;
     border-radius: 2em;
-    background: #4bc6b2;
+    background: #455ede;
     width: 200px;
     height: 2.7em;
     display: inline-block;
@@ -146,7 +141,7 @@ body
     top: 5em;
     left: 15em;
     border-radius: 2em;
-    background: #943e9c;
+    background: #455ede;
     width: 200px;
     height: 2.7em;
     display: inline-block;
@@ -162,7 +157,7 @@ body
     top: 5em;
     left: 29em;
     border-radius: 2em;
-    background: #943e9c;
+    background: #455ede;
     width: 200px;
     height: 2.7em;
     display: inline-block;
@@ -180,12 +175,12 @@ body
 
 .button {
     border-top: 1px solid #000000;
-    background: #943e9c;
+    background: #6889ff;
     background: -webkit-gradient(linear, left top, left bottom, from(#943e9c), to(#943e9c));
-    background: -webkit-linear-gradient(top, #943e9c, #943e9c);
-    background: -moz-linear-gradient(top, #943e9c, #943e9c);
-    background: -ms-linear-gradient(top, #943e9c, #943e9c);
-    background: -o-linear-gradient(top, #943e9c, #943e9c);
+    background: -webkit-linear-gradient(top, #6889ff, #6889ff);
+    background: -moz-linear-gradient(top, #6889ff, #6889ff);
+    background: -ms-linear-gradient(top, #6889ff, #6889ff);
+    background: -o-linear-gradient(top, #6889ff, #6889ff);
     padding: 11.5px 23px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
@@ -202,8 +197,8 @@ body
     top: 50%;
 }
 .button:hover  {
-    border-top-color: #b76bbf;
-    background: #b76bbf;
+    border-top-color: #6889ff;
+    background: #40c4ff;
     color: #ffffff;
 }
 

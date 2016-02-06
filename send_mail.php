@@ -53,7 +53,7 @@ if(!is_null($_POST['mail'])&&!is_null($_POST['id'])){
         $message .= '<html>';      
          $message .= '<head>';    
             $message .= '<link href="http://belldandy.esy.es/css/payment.css" rel="stylesheet" type="text/css"/ >';
-            $message .= '<link href="http://belldandy.esy.es/css/payment.css" rel="stylesheet" type="text/css"/ media="print">';
+            $message .= '<link href="http://belldandy.esy.es/css/paymentprint.css" rel="stylesheet" type="text/css"/ media="print">';
          $message .= '</head>';
          
          $message .= '<body>';
@@ -71,7 +71,8 @@ if(!is_null($_POST['mail'])&&!is_null($_POST['id'])){
                 $message .= '<img src="'.$charge->payment_method->barcode_url.'" id="img" />';
                 $message .= '<br><label id="barcode">'.$charge->payment_method->barcode.'</label>';
                 $message .= '<br><label id="nota">Recuerde que OXXO S.A. de C.V. cobra una comision adicional al costo aqui mostrado de $9.00 MXN</label>';
-            $message .= '</div>';
+                $message .= '<br><br><br><label id="ip"> Su direccion IP:'.$_SERVER['REMOTE_ADDR'].' ha sido guardada por seguridad</label>';
+                $message .= '</div>';
         $message .= '</body>';
         
          $message .= '</html>';
