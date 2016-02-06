@@ -5,17 +5,17 @@ $event_json = json_decode($body);
 
 if ($event_json->type == 'charge.paid'){
  
- //Hacer algo con la información como actualizar los atributos de la orden en tu base de datos
- 
- //charge = $this->Charge->find('first', array(
- 
- //  'conditions' => array('Charge.id' => $event_json->object->id)
- 
- //))
     
-    echo $event_json->object->id;
-    echo $event_json->object->status;
-    echo $event_json->object->amount;
+    $message = $event_json->data->object->id;
+    $message .= $event_json->data->object->status;
+    $message .= $event_json->data->object->amount;
+    
+     $destinatario = "g_rico_c@hotmail.com";
+        $asunto = "Compra Confirmada" ;
+        
+        //para el envío en formato HTML 
+     
+       mail($destinatario,$asunto,$message,$headers);
     
     http_response_code(200);
 }
