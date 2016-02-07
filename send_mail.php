@@ -64,6 +64,7 @@ if(!is_null($_POST['mail'])&&!is_null($_POST['id'])){
                 $message .='</div>';
                 $message .= '<br><br><br>';
                 $costo = $charge->amount/100;
+                $message .= '<br><label id="p"> Id Compra: '.$charge->id.'</label><br>';
                 $message .= '<br><label id="p"> Costo: $'.$costo.'</label><br>';
                 $message .= '<br><label id="p"> Descripcion: '.$charge->description.'</label><br>'; 
                 $message .= '<br><label id="p"> SKU: '.$charge->reference_id.'</label><br>';

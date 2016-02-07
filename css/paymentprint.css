@@ -29,18 +29,18 @@
 }
 
 #nota{
-    margin-left: 15em;
+    margin-left: 9em;
     color: red;
     font-size: 1em;
 }
 
 #img{
-    margin-left: 25em;
+    margin-left: 12em;
     width: 300px;
     }
 
 #barcode{
-    margin-left: 26em;
+    margin-left: 11em;
     font-weight: bold
 }
 body
