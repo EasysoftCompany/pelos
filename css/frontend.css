@@ -16,7 +16,7 @@ body
 
 #head
 {
-    background-color: #222FFF;
+    background-color: #1976d2;
     margin: 0;
     width: 100%;
     color: white;
@@ -29,7 +29,7 @@ body
 
 #foot
 {
-    background-color: #222FFF;
+    background-color: #1976d2;
     color: white;
     width: 100%;
     text-align: center;
@@ -53,7 +53,7 @@ body
     //background-image: url("../css/LogoEasySoft(SinFondo).png");
     //background-repeat: no-repeat;
     //background-size: auto;
-    background-color: #03a9f4;
+    background-color: #90caf9;
     color: black;
     width: available;
 
@@ -71,7 +71,7 @@ body
     //background-image: url("../css/LogoEasySoft(SinFondo).png");
     //background-repeat: no-repeat;
     //background-size: auto;
-    background-color: #03a9f4;
+    background-color: #90caf9;
     color: white;
     width: available;
 
@@ -90,7 +90,7 @@ body
     //background-image: url("../css/LogoEasySoft(SinFondo).png");
     //background-repeat: no-repeat;
     //background-size: auto;
-    background-color: #03a9f4;
+    background-color: #90caf9;
     color: BLACK;
     width: available;
 
@@ -117,14 +117,16 @@ body
 
 #menuIteminfo
 {
-    
-    color: #ffffff;
-    position: fixed;
+    text-decoration: none;
+    color: #fff;
+    background-color: #26a69a;
     text-align: center;
+    letter-spacing: .5px;
+    transition: .2s ease-out;
+    position: fixed;
     top: 0em;
     left: 1em;
-    border-radius: 2em;
-    background: #455ede;
+    border-radius: 0em;
     width: 200px;
     height: 4em;
     display: inline-block;
@@ -134,14 +136,17 @@ body
 
 #menuIteminfo2
 {
-    
-    color: #ffffff;
-    position: fixed;
+
+    text-decoration: none;
+    color: #fff;
+    background-color: #26a69a;
     text-align: center;
+    letter-spacing: .5px;
+    transition: .2s ease-out;
+    position: fixed;
     top: 0em;
     left: 15em;
-    border-radius: 2em;
-    background: #455ede;
+    border-radius: 0em;
     width: 200px;
     height: 4em;
     display: inline-block;
@@ -151,14 +156,15 @@ body
 
 #menuIteminfo3
 {
-    //color: #ffffff;
+    text-decoration: none;
+    color: #fff;
+    text-align: center; 
+    transition: .2s ease-out;
     position: fixed;
-    text-align: center;
     top: 0em;
     left: 90%;
-    //border-radius: 2em;
-    //background: #455ede;
-    width: 4em;
+    border-radius: 0em;
+    width: 200px;
     height: 4em;
     display: inline-block;
     vertical-align: middle;
@@ -166,14 +172,16 @@ body
 
 #menuIteminfo:hover
 {
-    background: #233cac;
+   box-shadow:0 5px 11px 0 rgba(0,0,0,0.18);
+   background-color: #2bbbad;
 }
 #menuIteminfo2:hover
-{
-    background: #233cac;
+{  
+    box-shadow:0 5px 11px 0 rgba(0,0,0,0.18);
+   background-color: #2bbbad;
 }#menuIteminfo3:hover
 {
-    background: #233cac;
+       box-shadow:0 5px 11px 0 rgba(0,0,0,0.18);
 }
 
 #bigone

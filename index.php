@@ -42,28 +42,31 @@ and open the template in the editor.
             <?php
             include 'arrays.php';
             
-            $cant = count($price);
+            $sql = mysqli_connect($host,$usr,$pwd);
+            mysqli_select_db($sql,$database);
+                $result = mysqli_query($sql, "SELECT * FROM productos");
             
-                for($x=1;$x<=$cant;$x++)
+               while($query = mysqli_fetch_array($result))
                 {
                     echo '<tr>';
                         echo '<td>';
-                        echo '<a href="galeria/img'.$x.'.jpg" rel="shadowbox[galeria1]" title="Imagen '.$x.'" ><img src="galeria/img'.$x.'.jpg" style="width:150px;height:100px;border:7px solid #1c1c1c;padding:0px;margin-left: 3em;"/></a>';
+                        echo '<a href="../information.php?id_send='.$query['id'].'" title="Imagen '.$query['id'].'" ><img src="galeria/'.$query['id'].'.jpg" style="width:150px;height:100px;border:7px solid #1c1c1c;padding:0px;margin-left: 3em;"/></a>';
                         echo '</td>';
                         
+//                        
                         echo '<td>';
-                        echo 'Precio $'.$price[$x-1].' Descripciòn: '.$desc[$x-1];
-                        echo '</td>';
-                        
-                        echo '<td>';
-                            echo '<form action="./send_mail.php" method="POST">';
-                               echo '<label>Para comprar el producto ingrese su correo electronico</label><br/><br/>';
-                               echo '<label>Email:</label>';
-                               echo '<input type="email" name="mail" placeholder="someone@domain.com" required><br>';
-                               echo '<input type="hidden" name="id" value="'.$x.'">';
-                               echo '<input class="button" type="submit" value="comprar">';                           
-                            echo '</form>';
-                        echo '</td>';
+                       echo 'Precio $'.$query['price'].' Descripciòn: '.$query['description'].' Existencias: '.$query['cant'];
+                       echo '</td>';
+//                        
+//                        echo '<td>';
+//                            echo '<form action="./send_mail.php" method="POST">';
+//                               echo '<label>Para comprar el producto ingrese su correo electronico</label><br/><br/>';
+//                               echo '<label>Email:</label>';
+//                               echo '<input type="email" name="mail" placeholder="someone@domain.com" required><br>';
+//                               echo '<input type="hidden" name="id" value="'.$x.'">';
+//                               echo '<input class="button" type="submit" value="comprar">';                           
+//                            echo '</form>';
+//                        echo '</td>';
                     echo '</tr>';
                     
                 }

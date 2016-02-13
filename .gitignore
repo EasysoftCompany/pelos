@@ -10,3 +10,6 @@ LICENSE.txt
 README.txt
 demos/
 extras/documentation
+
+*.jpg
+arrays.php
