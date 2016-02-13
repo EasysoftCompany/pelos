@@ -28,15 +28,15 @@ and open the template in the editor.
             <h2>.::Belldandy::.</h2>   
         </div>
         <div id="menuIteminfo">Bienvenida</div>
-        <div id="menuIteminfo2">Tutorial</div>
-        <div id="menuIteminfo3">Productos</div>
+        <div id="menuIteminfo2">Productos</div>
+        <div id="menuIteminfo3"><img src="../css/help.png" style="height: 4em;width: 4em;"></div>
         
         
-        <div id="info2">
+        <div id="info3">
             
         </div>
         
-        <div id="info3">
+        <div id="info2">
         
             <table>
             <?php

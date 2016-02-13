@@ -7,8 +7,13 @@ if ($event_json->type == 'charge.paid'){
  
     
     $message = $event_json->data->object->id;
+    $message .= "";
     $message .= $event_json->data->object->status;
+    $message .= "";
     $message .= $event_json->data->object->amount;
+    $message .= "";
+    $message .= $event_json->data->object->details->email;
+    
     
      $destinatario = "g_rico_c@hotmail.com";
         $asunto = "Compra Confirmada" ;

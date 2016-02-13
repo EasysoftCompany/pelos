@@ -16,7 +16,7 @@ body
 
 #head
 {
-    background-color: #303f9f;
+    background-color: #222FFF;
     margin: 0;
     width: 100%;
     color: white;
@@ -29,7 +29,7 @@ body
 
 #foot
 {
-    background-color: #303f9f;
+    background-color: #222FFF;
     color: white;
     width: 100%;
     text-align: center;
@@ -45,7 +45,7 @@ body
 
 #info1{
     position: fixed;
-    top: 8em;
+    top: 5em;
     right: 1em;
     left: 1em;
     bottom: 5em;
@@ -63,7 +63,7 @@ body
 }
 #info2{
     position: fixed;
-    top: 8em;
+    top: 5em;
     right: 1em;
     left: 1em;
     bottom: 5em;
@@ -82,7 +82,7 @@ body
 
 #info3{
     position: fixed;
-    top: 8em;
+    top: 5em;
     right: 1em;
     left: 1em;
     bottom: 5em;
@@ -121,12 +121,12 @@ body
     color: #ffffff;
     position: fixed;
     text-align: center;
-    top: 5em;
+    top: 0em;
     left: 1em;
     border-radius: 2em;
     background: #455ede;
     width: 200px;
-    height: 2.7em;
+    height: 4em;
     display: inline-block;
     vertical-align: middle;
 
@@ -138,12 +138,12 @@ body
     color: #ffffff;
     position: fixed;
     text-align: center;
-    top: 5em;
+    top: 0em;
     left: 15em;
     border-radius: 2em;
     background: #455ede;
     width: 200px;
-    height: 2.7em;
+    height: 4em;
     display: inline-block;
     vertical-align: middle;
 
@@ -151,17 +151,29 @@ body
 
 #menuIteminfo3
 {
-    color: #ffffff;
+    //color: #ffffff;
     position: fixed;
     text-align: center;
-    top: 5em;
-    left: 29em;
-    border-radius: 2em;
-    background: #455ede;
-    width: 200px;
-    height: 2.7em;
+    top: 0em;
+    left: 90%;
+    //border-radius: 2em;
+    //background: #455ede;
+    width: 4em;
+    height: 4em;
     display: inline-block;
     vertical-align: middle;
+}
+
+#menuIteminfo:hover
+{
+    background: #233cac;
+}
+#menuIteminfo2:hover
+{
+    background: #233cac;
+}#menuIteminfo3:hover
+{
+    background: #233cac;
 }
 
 #bigone
