@@ -45,19 +45,25 @@ and open the template in the editor.
             $sql = mysqli_connect($host,$usr,$pwd);
             mysqli_select_db($sql,$database);
                 $result = mysqli_query($sql, "SELECT * FROM productos");
-            
+            $cont = 0;
                while($query = mysqli_fetch_array($result))
                 {
-                    echo '<tr>';
+
                         echo '<td>';
-                        echo '<a href="../information.php?id_send='.$query['id'].'" title="Imagen '.$query['id'].'" ><img src="galeria/'.$query['id'].'.jpg" style="width:150px;height:100px;border:7px solid #1c1c1c;padding:0px;margin-left: 3em;"/></a>';
+                        echo '<a class="cursorimg" href="../information.php?id_send='.$query['id'].'" title="Imagen '.$query['id'].'" ><img src="galeria/'.$query['id'].'.jpg" style="width:150px;height:100px;border:7px solid #1c1c1c;padding:0px;margin-left: 3em;"/></a>';
                         echo '</td>';
-                        
+                        $cont++;
+                        if($cont%6 == 0)
+                        {
+                            $cont = 0;
+                            echo'<tr></tr>';
+                        }
 //                        
-                        echo '<td>';
-                       echo 'Precio $'.$query['price'].' Descripciòn: '.$query['description'].' Existencias: '.$query['cant'];
-                       echo '</td>';
-//                        
+//                        echo '<td>';
+//                       echo 'Precio $'.$query['price'].' Descripciòn: '.$query['description'].' Existencias: '.$query['cant'];
+//                       echo '</td>';
+                       
+
 //                        echo '<td>';
 //                            echo '<form action="./send_mail.php" method="POST">';
 //                               echo '<label>Para comprar el producto ingrese su correo electronico</label><br/><br/>';
@@ -67,7 +73,7 @@ and open the template in the editor.
 //                               echo '<input class="button" type="submit" value="comprar">';                           
 //                            echo '</form>';
 //                        echo '</td>';
-                    echo '</tr>';
+                   
                     
                 }
             

@@ -1,12 +1,23 @@
 <?php
 
+include 'arrays.php';
+
 $body = file_get_contents('php://input');
 $event_json = json_decode($body);
 
 if ($event_json->type == 'charge.paid'){
  
+    $sql = mysqli_connect($host, $usr, $pwd);
+    mysqli_select_db($sql, $database);
+    $result = mysqli_query($sql, "UPDATE productos SET cant = cant-1 where id = '" . $event_json->data->object->reference_id . "'");
+
+    
+    
+    
     
     $message = "<p>".$event_json->data->object->id;
+    $message .= "<br>";
+    $message .= "<p>".$event_json->data->object->reference_id;
     $message .= "<br>";
     $message .= "<p>".$event_json->data->object->status;
     $message .= "<br>";

@@ -10,7 +10,8 @@ and open the template in the editor.
 
 body
 {
-    background-color: white;
+    background-image: url(fondo.jpg);
+    
 }
 
 
@@ -42,6 +43,9 @@ body
 
 }
 
+#info1:hover,#info2:hover,#info3:hover{
+   cursor: url(http://cur.cursors-4u.net/cursors/cur-2/cur116.cur),progress;
+}
 
 #info1{
     position: fixed;
@@ -124,11 +128,11 @@ body
     letter-spacing: .5px;
     transition: .2s ease-out;
     position: fixed;
-    top: 0em;
+    top: 0.5em;
     left: 1em;
     border-radius: 0em;
     width: 200px;
-    height: 4em;
+    height: 3em;
     display: inline-block;
     vertical-align: middle;
 
@@ -144,11 +148,11 @@ body
     letter-spacing: .5px;
     transition: .2s ease-out;
     position: fixed;
-    top: 0em;
+    top: 0.5em;
     left: 15em;
     border-radius: 0em;
     width: 200px;
-    height: 4em;
+    height: 3em;
     display: inline-block;
     vertical-align: middle;
 
@@ -171,12 +175,19 @@ body
 #menuIteminfo:hover
 {
    box-shadow:0 5px 11px 0 rgba(0,0,0,0.18);
+   height: 3.5em;
    background-color: #2bbbad;
+   cursor: url(http://cur.cursors-4u.net/special/spe-1/spe4.cur), progress !important;
 }
 #menuIteminfo2:hover
 {  
     box-shadow:0 5px 11px 0 rgba(0,0,0,0.18);
-   background-color: #2bbbad;
+    background-color: #2bbbad;
+    height: 3.5em;
+    cursor: url(http://cur.cursors-4u.net/special/spe-1/spe4.cur), progress !important;
+}
+#menuIteminfo3:hover{
+    cursor:help;
 }
 
 #bigone
@@ -239,4 +250,9 @@ p {
 table
 {
     alignment-adjust: central;
+}
+
+.cursorimg
+{
+    cursor: url(http://cur.cursors-4u.net/anime/ani-12/ani1136.ani), url(http://cur.cursors-4u.net/anime/ani-12/ani1136.gif), progress !important;
 }
