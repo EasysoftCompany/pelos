@@ -62,7 +62,7 @@ and open the template in the editor.
 
         
         <div id="info3">
-
+            <p>Ayuda en Construccion</p>
         </div>
 
         <div id="info2">

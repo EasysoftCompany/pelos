@@ -9,6 +9,17 @@ if (!is_null($_POST['mail']) && !is_null($_POST['id_send'])) {
 
     $mail = $_POST['mail'];
     $id = addslashes($_POST['id_send']);
+    $nombre = $_POST['nombre'];
+    $ap = $_POST['ap'];
+    $am = $_POST['am'];
+    $tel = $_POST['tel'];
+    $cantidad = $_POST['cantidad'];
+    $calle = $_POST['calle'];
+    $numero = $_POST['numero'];
+    $colonia = $_POST['colonia'];
+    $mpio = $_POST['mpio'];
+    $edo = $_POST['edo'];
+    $cp = $_POST['cp'];
 
     $dia_manana = date('d', time() + 172800);
     $mes_manana = date('m', time() + 172800);
@@ -24,40 +35,53 @@ if (!is_null($_POST['mail']) && !is_null($_POST['id_send'])) {
 
 
         $charge = Conekta_Charge::create(array(
-                    'description' => $query['description'],
-                    'reference_id' => $id,
-                    'amount' => $query['price'],
-                    'currency' => 'MXN',
-                    'cash' => array(
-                        'type' => 'oxxo',
-                        'expires_at' => $ano_manana . '-' . $mes_manana . '-' . $dia_manana
-                    ),
-                    'details' => array(
-                        'name' => null,
-                        'phone' => null,
-                        'email' => $mail,
-                        'customer' => array(
-                            'corporation_name' => null,
-                            'logged_in' => false,
-                            'successful_purchases' => null,
-                            'created_at' => null,
-                            'updated_at' => null,
-                            'offline_payments' => 0,
-                            'score' => 0
-                        ),
-                        'line_items' => array(
-                            array(
-                                'name' => $id,
-                                'description' => $query['description'],
-                                'unit_price' => $query['price'],
-                                'quantity' => 1,
-                                'sku' => $id,
-                                'type' => 'Anime'
-                            )
-                        ),
-                    )
+        'description' => $query['description'],
+        'reference_id' => $id,
+        'amount' => $query['price']*$cantidad,
+        'currency' => 'MXN',
+        'cash' => array(
+        'type' => 'oxxo',
+        'expires_at' => $ano_manana . '-' . $mes_manana . '-' . $dia_manana
+        ),
+        'details' => array(
+        'name' => $nombre." ".$ap." ".$am,
+        'phone' => $tel,
+        'email' => $mail,
+        'customer' => array(
+        'corporation_name' => null,
+        'logged_in' => false,
+        'successful_purchases' => null,
+        'created_at' => null,
+        'updated_at' => null,
+        'offline_payments' => 0,
+        'score' => 0
+        ),
+        'line_items' => array(
+        array(
+        'name' => $id,
+        'description' => $query['description'],
+        'unit_price' => $query['price'],
+        'quantity' => $cantidad,
+        'sku' => $id,
+        'type' => 'Anime'
+        )
+        ),
+        'shipment' => array(
+        'carrier' => 'estafeta',
+        'service' => 'national',
+        'price' => 20000,
+        'address' => array(
+        'street1' => $calle,
+        'street2' => $numero,
+        'street3' => $colonia,
+        'city' => $mpio,
+        'state' => $edo,
+        'zip' => $cp,
+        'country' => 'Mexico'
+        )
+        ))
         ));
-    
+
         $message .= '<html>';
         $message .= '<head>';
         $message .= '<link href="http://belldandy.esy.es/css/payment.css" rel="stylesheet" type="text/css"/ >';
@@ -73,15 +97,20 @@ if (!is_null($_POST['mail']) && !is_null($_POST['id_send'])) {
         $message .= '<br><br><br>';
         $costo = $charge->amount / 100;
         $message .= '<br><label id="p"> Id Compra: ' . $charge->id . '</label><br>';
-        $message .= '<br><label id="p"> Costo: $' . $costo . '</label><br>';
+        $message .= '<br><label id="p"> Total: $' . $costo . '</label><br>';
         $message .= '<br><label id="p"> Descripcion: ' . $charge->description . '</label><br>';
         $message .= '<br><label id="p"> SKU: ' . $charge->reference_id . '</label><br>';
+        $message .= '<br><label id="p"> Cantidad: ' . $cantidad . '</label><br>';
         $message .= '<br><label id="p"> Fecha de Expiracion: ' . date("j-M-Y g:i a", $charge->payment_method->expires_at) . '</label><br><br><br>';
         $message .= '<img src="' . $charge->payment_method->barcode_url . '" id="img" />';
         $message .= '<br><label id="barcode">' . $charge->payment_method->barcode . '</label>';
         $message .= '<br><label id="nota">Recuerde que OXXO S.A. de C.V. cobra una comision adicional al costo aqui mostrado de $9.00 MXN</label>';
+        
+        $message .= '<br><br><label id="p"> NOTA: Despues de haber pagado, recuerde enviar su comprobante de pago a: ventas@belldandy.esy.es</label>';
+        $message .= '<br><label id="p"> Adicionalmente puede incluir referencias adicionales para el envio de su producto o coordinar la entrega del mismo</label>';
+        
         $message .= '<br><br><input type="button" class="button" id="imprimir" value="Imprimir P&aacute;gina" onclick="window.print();">';
-         $message .= '</div>';
+        $message .= '</div>';
         $message .= '</body>';
 
         $message .= '</html>';
@@ -99,11 +128,11 @@ if (!is_null($_POST['mail']) && !is_null($_POST['id_send'])) {
         $headers .= "Reply-To: " . $mail;
 
         mail($destinatario, $asunto, $message, $headers);
-        }
-    } else {
-        echo '<script>'
-        . 'window.location="./500.html"'
-        . '</script>';
     }
+} else {
+    echo '<script>'
+    . 'window.location="./500.html"'
+    . '</script>';
+}
 
     
