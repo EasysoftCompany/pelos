@@ -41,24 +41,26 @@ and open the template in the editor.
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li id="menuIteminfo"><a href="#">Bienvenida</a></li>
-                    <li id="menuIteminfo2"><a href="#">Productos</a></li>
-                    <li id="menuIteminfo3"><a href="#">Ayuda</a></li>
+                    <li><a href="#" id="menuIteminfo">Bienvenida</a></li>
+                    <li><a href="#" id="menuIteminfo2">Productos</a></li>
+                    <li><a href="#" id="menuIteminfo3">Ayuda</a></li>
                 </ul>
 
                 <ul class="side-nav" id="mobile-demo">
-                    <li id="menuIteminfo"><a href="#">Bienvenida</a></li>
-                    <li id="menuIteminfo2"><a href="#">Productos</a></li>
-                    <li id="menuIteminfo3"><a href="#">Ayuda</a></li>
+                    <li><a href="#" id="menuIteminfo4">Bienvenida</a></li>
+                    <li><a href="#" id="menuIteminfo5">Productos</a></li>
+                    <li><a href="#" id="menuIteminfo6">Ayuda</a></li>
                 </ul>
 
             </div>
         </nav>
+        
+        <main>
         <!--        <div id="menuIteminfo">Bienvenida</div>
                 <div id="menuIteminfo2">Productos</div>
                 <div id="menuIteminfo3"><img src="../css/help.png" style="height: 4em;width: 4em;"></div>-->
 
-
+        
         <div id="info3">
 
         </div>
@@ -76,7 +78,7 @@ and open the template in the editor.
                 while ($query = mysqli_fetch_array($result)) {
 
                     echo '<td>';
-                    echo '<a class="cursorimg" href="../information.php?id_send=' . $query['id'] . '" title="Imagen ' . $query['id'] . '" ><img src="galeria/' . $query['id'] . '.jpg" style="width:150px;height:100px;border:7px solid #1c1c1c;padding:0px;margin-left: 3em;"/></a>';
+                    echo '<a class="cursorimg" href="../information.php?id_send=' . $query['id'] . '" title="Imagen ' . $query['id'] . '" ><img class="hoverable responsive-img src="galeria/' . $query['id'] . '.jpg" style="width:150px;height:100px;border:7px solid #1c1c1c;padding:0px;margin-left: 3em;"/></a>';
                     echo '</td>';
                     $cont++;
                     if ($cont % 6 == 0) {
@@ -105,14 +107,14 @@ and open the template in the editor.
         <div id="info1">
             <p>Algunas palabras de interes...</p>
         </div>
-
-
+        
+        </main>
 
 
         <footer class="page-footer blue darken-2">
             <div class="footer-copyright">
                 <div class="container">
-                    © 2016 Easysoft Company
+                    © 2016 Belldandy
                     <a class="grey-text text-lighten-4 right" href="#!">belldandy.esy.es</a>
                 </div>
             </div>
