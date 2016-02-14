@@ -81,8 +81,7 @@ if (!is_null($_POST['mail']) && !is_null($_POST['id_send'])) {
         $message .= '<br><label id="barcode">' . $charge->payment_method->barcode . '</label>';
         $message .= '<br><label id="nota">Recuerde que OXXO S.A. de C.V. cobra una comision adicional al costo aqui mostrado de $9.00 MXN</label>';
         $message .= '<br><br><input type="button" class="button" id="imprimir" value="Imprimir P&aacute;gina" onclick="window.print();">';
-        $message .= '<br><br><br><label id="ip"> Su direccion IP:' . $_SERVER['REMOTE_ADDR'] . ' ha sido guardada por seguridad</label>';
-        $message .= '</div>';
+         $message .= '</div>';
         $message .= '</body>';
 
         $message .= '</html>';
