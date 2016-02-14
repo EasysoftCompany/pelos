@@ -9,6 +9,13 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title>.::Belldandy::.</title>
         
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="./materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
         <link href="css/frontend.css" rel="stylesheet" type="text/css"/>
         <link rel="icon" type="image/png" href="css/favicon.ico" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
