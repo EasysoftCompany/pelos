@@ -67,7 +67,7 @@ and open the template in the editor.
 
         <div id="info2">
 
-            <table>
+            <table class="responsive-table">
                 <?php
                 include 'arrays.php';
 
@@ -78,7 +78,7 @@ and open the template in the editor.
                 while ($query = mysqli_fetch_array($result)) {
 
                     echo '<td>';
-                    echo '<a class="cursorimg" href="../information.php?id_send=' . $query['id'] . '" title="Imagen ' . $query['id'] . '" ><img class="hoverable responsive-img src="galeria/' . $query['id'] . '.jpg" style="width:150px;height:100px;border:7px solid #1c1c1c;padding:0px;margin-left: 3em;"/></a>';
+                    echo '<a class="cursorimg" href="../information.php?id_send=' . $query['id'] . '" title="Imagen ' . $query['id'] . '" ><img class="hoverable responsive-img" src="galeria/' . $query['id'] . '.jpg" style="width:150px;height:100px;border:7px solid #1c1c1c;padding:0px;margin-left: 3em;"/></a>';
                     echo '</td>';
                     $cont++;
                     if ($cont % 6 == 0) {
