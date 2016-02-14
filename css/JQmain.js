@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+ $(".button-collapse").sideNav();
+         $("#info1").slideUp("fast");
+        $("#info2").slideUp("fast");
+        $("#info3").slideUp("fast");
+ 
     $("#menuIteminfo3").click(function () {
         $("#info1").slideUp("fast");
         $("#info2").slideUp("fast");
