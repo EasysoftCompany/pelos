@@ -2,7 +2,7 @@
     <head>
         <meta charset="UTF-8">
         <title>.::Datos del producto::.</title>
- 
+       <script src="css/info.js" type="text/javascript"></script>
        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
@@ -68,10 +68,12 @@ echo'<br/>';
                                             <label for="tel" data-error="Error!" data-success="Ok!">No. Telefono</label>
                                             </div>   
 
-                                             <div class="input-field col s12">
-                                            <input value="1" id="cantidad" name="cantidad" type="number" class="validate">
-                                            <label for="cantidad" data-error="Error!" data-success="Ok!">Cantidad</label>
-                                            </div>                                           
+                                             
+                                                <p class="range-field">
+                                                     <label for="cantidad">Cantidad</label>
+                                                    <input type="range" name="cantidad" id="cantidad" min="1" max="'.$query['cant'].'" />
+                                                 </p>
+                                                                                  
 
 ';
                                
@@ -89,6 +91,23 @@ echo'<br/>';
                                             <input id="am" name="am" type="text" class="validate" required>
                                             <label for="am" data-error="Error!" data-success="Ok!">Apellido Materno</label>
                                             </div>
+                                            
+                                            <br>
+                                           <label>¿Envio a Domicilio?</label>
+                                              <div class="switch">
+                                                <label>
+                                                 No
+                                                  <input id="dire" type="checkbox" checked onchange="despliega()">
+                                                  <span class="lever"></span>
+                                                  Si
+                                                </label>
+                                              </div>
+
+                                            <br>
+                                            
+
+
+                                            <div id="direccion">
                                             
                                             <div class="input-field col s12">
                                             <input id="calle" name="calle" type="text" class="validate">
@@ -119,6 +138,8 @@ echo'<br/>';
                                             <div class="input-field col s12">
                                             <input id="cp" name="cp" type="number" class="validate">
                                             <label for="cp" data-error="Error!" data-success="Ok!">Codigo Postal</label>
+                                            </div>
+                                            
                                             </div>
                                             ';
                                
