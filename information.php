@@ -22,7 +22,7 @@
     <body>
         
         <nav>
-            <div class="nav-wrapper blue lighten-3" >
+            <div class="nav-wrapper blue darken-1" >
                 <a href="#" class="brand-logo center">.::Belldandy::.</a>
             </div>
         </nav>
@@ -47,9 +47,9 @@ $price = $query['price']/100;
 echo'<br/>';
                 echo '<div class="container">';
         
-                        echo '<img class="hoverable responsive-img" src="galeria/'.$query['id'].'.jpg" style="width:250px;height:200px;border:7px solid #1c1c1c;padding:0px;margin-left: 3em;"/>';
+                        echo '<div class="center-align"><img class="hoverable responsive-img" src="galeria/'.$query['id'].'.jpg" style="width:200px;height:250px;border:4px solid #1c1c1c;padding:0px;"/></div>';
       
-                        echo '<p>Precio $'.$price.' Descripciòn: '.$query['description'].' Existencias: '.$query['cant'].'</p>';
+                        echo '<p class="center-align">Precio $'.$price.'</p> <p class="center-align"> Descripciòn: '.$query['description'].' </p> <p class="center-align">Existencias: '.$query['cant'].'</p>';
                  echo '</div>';   
                 
                  

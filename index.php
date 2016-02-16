@@ -30,7 +30,7 @@
     </head>
     <body>
         <nav>
-            <div class="nav-wrapper blue lighten-3" >
+            <div class="nav-wrapper blue darken-1" >
 
                 <a href="#" class="brand-logo center">.::Belldandy::.</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -57,7 +57,9 @@
 
         
         <div id="info3">
-            <p>Ayuda en Construccion</p>
+            <div class="container">
+                <p>Ayuda en Construccion</p>
+            </div>
         </div>
 
         <div id="info2">
@@ -73,10 +75,10 @@
                 while ($query = mysqli_fetch_array($result)) {
 
                     echo '<td>';
-                    echo '<a class="cursorimg" href="../information.php?id_send=' . $query['id'] . '" title="Imagen ' . $query['id'] . '" ><img class="hoverable responsive-img" src="galeria/' . $query['id'] . '.jpg" style="width:150px;height:100px;border:7px solid #1c1c1c;padding:0px;margin-left: 3em;"/></a>';
+                    echo '<a class="cursorimg" href="../information.php?id_send=' . $query['id'] . '" title="Imagen ' . $query['id'] . '" ><img class="hoverable responsive-img" src="galeria/' . $query['id'] . '.jpg" style="width:150px;height:100px;border:2px solid #1c1c1c;padding:0px;margin-left: 3em;"/></a>';
                     echo '</td>';
                     $cont++;
-                    if ($cont % 6 == 0) {
+                    if ($cont % 5 == 0) {
                         $cont = 0;
                         echo'<tr></tr>';
                     }
@@ -100,7 +102,9 @@
 
 
         <div id="info1">
-            <p>Algunas palabras de interes...</p>
+             <div class="container">
+                <p>Bienvenido</p>
+            </div>
         </div>
         
         </main>

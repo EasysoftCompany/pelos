@@ -15,19 +15,23 @@ if ($event_json->type == 'charge.paid'){
     
     
     
-    $message = "<p>".$event_json->data->object->id;
+    $message = "<p> ID: ".$event_json->data->object->id;
     $message .= "<br>";
-    $message .= "<p>".$event_json->data->object->reference_id;
+    $message .= "<p> SKU: ".$event_json->data->object->reference_id;
     $message .= "<br>";
-    $message .= "<p>".$event_json->data->object->status;
+    $message .= "<p> Status: ".$event_json->data->object->status;
     $message .= "<br>";
-    $message .= "<p>".$event_json->data->object->amount;
+    $message .= "<p> Total: $".($event_json->data->object->amount/100.00);
     $message .= "<br>";
-    $message .= "<p>".$event_json->data->object->details->email;
+    $message .= "<p> Nombre Cliente: ".$event_json->data->object->details->name;  
+    $message .= "<br>";
+    $message .= "<p> Telefono Cliente: ".$event_json->data->object->details->phone;  
+    $message .= "<br>";
+    $message .= "<p> Mail Cliente: ".$event_json->data->object->details->email;
     
     
-     $destinatario = "g_rico_c@hotmail.com";
-        $asunto = "Compra Confirmada" ;
+     $destinatario = "g_rico_c@hotmail.com,camg.camg62@gmail.com";
+        $asunto = "Compra Confirmada ID:".$event_json->data->object->id ;
           $headers = "MIME-Version: 1.0\r\n"; 
         $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
         
