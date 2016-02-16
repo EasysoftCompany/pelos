@@ -28,10 +28,12 @@ if ($event_json->type == 'charge.paid'){
     $message .= "<p> Telefono Cliente: ".$event_json->data->object->details->phone;  
     $message .= "<br>";
     $message .= "<p> Mail Cliente: ".$event_json->data->object->details->email;
+    $message .= "<p> Mail Cliente: ".$event_json->data->object->details->line_items->quantity;
     
     
-     $destinatario = "g_rico_c@hotmail.com,camg.camg62@gmail.com";
-        $asunto = "Compra Confirmada ID:".$event_json->data->object->id ;
+        //$destinatario = "g_rico_c@hotmail.com,camg.camg62@gmail.com";
+        $destinatario = "g_rico_c@hotmail.com";
+    $asunto = "Compra Confirmada ID:".$event_json->data->object->id ;
           $headers = "MIME-Version: 1.0\r\n"; 
         $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
         
@@ -42,6 +44,11 @@ if ($event_json->type == 'charge.paid'){
     http_response_code(200);
 }
 else
-{
+    if($event_json->type == 'charge.created')
+    {
+        http_response_code(200);
+    }
+    else
+    {
     http_response_code(404);
-}
+    }
