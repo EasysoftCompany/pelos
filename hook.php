@@ -9,13 +9,16 @@ if ($event_json->type == 'charge.paid'){
  
     $sql = mysqli_connect($host, $usr, $pwd);
     mysqli_select_db($sql, $database);
-    $result = mysqli_query($sql, "UPDATE productos SET cant = cant-1 where id = '" . $event_json->data->object->reference_id . "'");
+    $update_tbl = mysqli_query($sql, "call sp_get_cant_by_id('".$event_json->data->object->id."')");
+    $result = mysqli_query($sql, "UPDATE productos SET cant = cant - 1 where id = '".$event_json->data->object->reference_id."';");
+    
 
+     while ($query = mysqli_fetch_array($update_tbl)) {
+       $message = "<h1>Entro ".$query['cantidad']."</h1><br><br>";  
+     }
     
     
-    
-    
-    $message = "<p> ID: ".$event_json->data->object->id;
+    $message .= "<p> ID: ".$event_json->data->object->id;
     $message .= "<br>";
     $message .= "<p> SKU: ".$event_json->data->object->reference_id;
     $message .= "<br>";
@@ -28,7 +31,7 @@ if ($event_json->type == 'charge.paid'){
     $message .= "<p> Telefono Cliente: ".$event_json->data->object->details->phone;  
     $message .= "<br>";
     $message .= "<p> Mail Cliente: ".$event_json->data->object->details->email;
-    $message .= "<p> Mail Cliente: ".$event_json->data->object->details->line_items->quantity;
+ 
     
     
         //$destinatario = "g_rico_c@hotmail.com,camg.camg62@gmail.com";

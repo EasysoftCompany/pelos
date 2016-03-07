@@ -28,7 +28,7 @@ if (!is_null($_POST['mail']) && !is_null($_POST['id_send'])) {
 
 
     $sql = mysqli_connect($host, $usr, $pwd);
-    mysqli_select_db($sql, $database);
+    mysqli_select_db($sql, $database);  
     $result = mysqli_query($sql, "SELECT * FROM productos where id = '" . $id . "'");
 
     while ($query = mysqli_fetch_array($result)) {
@@ -114,7 +114,8 @@ if (!is_null($_POST['mail']) && !is_null($_POST['id_send'])) {
         $message .= '</body>';
 
         $message .= '</html>';
-
+        
+        $venta = mysqli_query($sql, "call sp_venta('".$charge->id."','".$id."',".$cantidad.")");
         echo $message;
 
         $destinatario = $mail;
